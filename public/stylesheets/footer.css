@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.footer-container{
+  box-shadow: -3px 0px 3px 2px rgba(0, 0, 0, .5);
+  width: 100%;
+  position: sticky;
+  height: 125px;
+  background-color: #DFC1B1;
+  font-weight: bolder;
+}
+
+.developers-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+p p{
+  font-weight: bolder;
+  color: rgba(0, 0, 0, .75);
+}
+
+.footer-content-container{
+  background-color: #DFC1B1;
+  height: 50px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-us:hover{
+  color: #FFF3EB
+}

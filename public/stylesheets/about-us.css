@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body{
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  background-color: #F7F7F7;
+  overflow-x: hidden;
+}
+
+.layout{
+  padding: 5px;
+  /* border: solid 5px red; */
+
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+
+  margin-top: 130px;
+}
+
+.intro__container{
+  /* border: solid 5px red; */
+  margin: 0 auto;
+  max-width: 60%;
+  width: 100%;
+}
+
+#header1{
+  padding-top: 40px;
+  font-weight: 500;
+  font-size: 30pt;
+}
+
+#description{
+  margin: 30px auto;
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+#git-button{
+  width: 200%;
+  height: 70px;
+  padding-top: 20px;
+  /* grid-column-start: 4; */
+}
+
+#git-link{
+	border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 13px;
+  background-color: #6B7967;
+  font-size: 18pt;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #FFF3EB;
+}
+
+#git-link:hover{
+  width: 200px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: #FFF3EB;
+  color: rgb(15, 15, 15);
+}
+
+.link{
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover{
+  text-decoration: underline;
+  color: #6B7967
+}
+
+.bio__container{
+  /* border: solid 5px red; */
+  /* display: flex;
+  justify-content: space-evenly;
+  padding-top: 100px; */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 20px 20px 20px 20px;
+  /* margin: auto; */
+  padding: 20px;
+
+}
+
+.bio__container-person{
+  width: 90%;
+  /* border: solid 5px blue; */
+
+}
+
+.developer__story{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+#image{
+  /* height: 250px; */
+  padding: 10px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.developer{
+  font-size: 19px;
+  font-weight: 500;
+}
+/* 
+#name{
+  padding-left: 50px;
+} */
+
+.developer__links{
+  /* font-size: 40px; */
+  padding-right: 10px;
+}
+
+.links{
+  text-decoration: none;
+  font-weight: 500;
+  padding: 20px;
+}
+
+#github{
+  padding: 20px;
+  font-size: 20px;
+}
+
+#linkedin{
+  padding: 20px;
+  font-size: 20px;
+}
+

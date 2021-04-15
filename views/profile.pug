@@ -1,0 +1,50 @@
+extends layout.pug 
+
+append head
+  link(rel='stylesheet' href='/stylesheets/navbar.css')
+  link(rel='stylesheet' href='/stylesheets/profile.css')
+  link(rel='stylesheet' href='/stylesheets/footer.css')
+  script(type='text/javascript' src='/javascripts/followers.js' defer)
+
+block content 
+  nav(class="nav__container")
+    div.leftSide
+      a(href=`/profiles/${user.id}` class="nav-item user-name-link")= user.pen_name
+      input(type='hidden' value=user.id id='authorId')
+      if user.id !== loggedIn
+        if follow 
+          button#followBtn(type='submit') Unfollow 
+        else 
+          button#followBtn(type='submit') Follow
+      a(href=`/profiles/${user.id}/penpals` class="nav-item pen-pal-link")= `${penPalCount} Pen Pals`
+    img(src="/images/logo-thin.png" class="logo")
+    div.rightSide
+      a(href=`/newsfeed` class="nav-item") Home
+      a(href=`/articles/create` class="nav-item") Create an Article
+      form(action="/profiles/logout" method="post")
+        button(type="submit" class="nav-item") Log Out
+  
+  div(class="main-container")
+    div(class="pic-bio-container")
+      ul(class="author-info-list") 
+        if user.profile_pic 
+          img(id="profile-pic" src=`${user.profile_pic}`)
+        else 
+          img(id='profile-pic' src='/images/avatar-placeholder.svg')
+        li= user.pen_name
+        if user.bio
+          li(id="profile-bio")= user.bio
+        else 
+          li(id='profile-bio') This person has no bio.
+    div(class="user-article-container")
+      ul
+        each article in user.Articles
+          li(): a(href=`/articles/${article.id}` class="article-title")= article.title
+          li: a(href=`/articles/${article.id}`)
+            img(class="article-pic" src=`${article.imageSrc}`)
+          li(class="article-content")= `${article.content}...`
+          li(class="stamps-comments"): a(href=`/articles/${article.id}`)= article.Comments.length
+            img.commentImg(src="https://cdn2.iconfinder.com/data/icons/contact-us-50/512/Comment_message_message_reply_communication_conversation_emoji_chat-512.png")
+            =article.Stamps.length
+            img.commentImg(src="https://cdn3.iconfinder.com/data/icons/office-269/32/Office_Expanded_32pxl_Stamps-512.png")
+  include footer.pug
